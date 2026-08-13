@@ -1,0 +1,15 @@
+
+> @migration-flow-observatory/frontend@1.0.0 typecheck
+> tsc --noEmit
+
+src/config/env.ts(1,49): error TS2339: Property 'env' does not exist on type 'ImportMeta'.
+src/config/env.ts(1,131): error TS2339: Property 'env' does not exist on type 'ImportMeta'.
+src/features/migration-map/MigrationMap.tsx(1,98): error TS2307: Cannot find module 'react-map-gl/mapbox' or its corresponding type declarations.
+src/pages/DashboardPage.tsx(3,2279): error TS2550: Property 'at' does not exist on type 'TimelineEntry[]'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2022' or later.
+src/pages/DashboardPage.tsx(3,2369): error TS2550: Property 'at' does not exist on type 'TimelineEntry[]'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2022' or later.
+src/pages/DashboardPage.tsx(3,2455): error TS2550: Property 'at' does not exist on type 'TimelineEntry[]'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2022' or later.
+src/services/migrationService.ts(2,137): error TS2345: Argument of type 'RouteFilters & { page?: number | undefined; limit?: number | undefined; }' is not assignable to parameter of type 'Record<string, string | number | undefined> | undefined'.
+  Type 'RouteFilters & { page?: number | undefined; limit?: number | undefined; }' is not assignable to type 'Record<string, string | number | undefined>'.
+    Index signature for type 'string' is missing in type 'RouteFilters & { page?: number | undefined; limit?: number | undefined; }'.
+src/services/timelineService.ts(2,104): error TS2345: Argument of type 'TimelineFilters' is not assignable to parameter of type 'Record<string, string | number | undefined>'.
+  Index signature for type 'string' is missing in type 'TimelineFilters'.

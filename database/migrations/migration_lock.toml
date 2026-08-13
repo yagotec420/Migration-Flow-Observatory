@@ -1,0 +1,3 @@
+# Este arquivo é gerado automaticamente pelo Prisma Migrate.
+# Não editar manualmente. Define o provedor de banco usado pelas migrations.
+provider = "postgresql"

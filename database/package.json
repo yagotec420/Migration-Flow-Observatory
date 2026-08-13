@@ -1,0 +1,30 @@
+{
+  "name": "@migration-flow-observatory/database",
+  "version": "1.0.0",
+  "description": "Schema Prisma, migrations e seeds do PostgreSQL + PostGIS do Migration Flow Observatory.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "prisma generate --schema=./prisma/schema.prisma",
+    "migrate:dev": "prisma migrate dev --schema=./prisma/schema.prisma",
+    "migrate:deploy": "prisma migrate deploy --schema=./prisma/schema.prisma",
+    "migrate:apply-manual": "psql \"$DATABASE_URL\" -f migrations/00001_initial_database_structure/migration.sql",
+    "seed": "tsx seeds/seed.ts",
+    "studio": "prisma studio --schema=./prisma/schema.prisma",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "prisma": "^5.14.0",
+    "tsx": "^4.7.2",
+    "typescript": "^5.4.5"
+  },
+  "allowScripts": {
+    "@prisma/engines@5.22.0": true,
+    "esbuild@0.28.1": true,
+    "prisma@5.22.0": true
+  }
+}

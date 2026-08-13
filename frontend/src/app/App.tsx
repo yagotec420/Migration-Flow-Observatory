@@ -1,0 +1,1 @@
+import { lazy, Suspense } from 'react'; const DashboardPage = lazy(() => import('../pages/DashboardPage').then((module) => ({ default: module.DashboardPage }))); export function App() { return <Suspense fallback={<div className="app-loading">Inicializando observatório…</div>}><DashboardPage/></Suspense> }

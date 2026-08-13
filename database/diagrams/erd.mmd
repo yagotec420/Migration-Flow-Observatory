@@ -1,0 +1,75 @@
+erDiagram
+    COUNTRY ||--o{ LOCATION : "possui"
+    COUNTRY ||--o{ STATISTICS : "possui"
+    LOCATION ||--o{ MIGRATION_ROUTE : "origem"
+    LOCATION ||--o{ MIGRATION_ROUTE : "destino"
+    LOCATION ||--o{ MIGRATION_EVENT : "contextualiza"
+    MIGRATION_ROUTE ||--o{ MIGRATION_FLOW : "acumula"
+    DATA_SOURCE ||--o{ MIGRATION_FLOW : "alimenta"
+
+    COUNTRY {
+        uuid id PK
+        string name
+        string iso_code UK
+        string continent
+        float latitude
+        float longitude
+        datetime deleted_at
+    }
+
+    LOCATION {
+        uuid id PK
+        uuid country_id FK
+        string name
+        enum type
+        float latitude
+        float longitude
+        geometry geometry "PostGIS Point 4326"
+        datetime deleted_at
+    }
+
+    MIGRATION_ROUTE {
+        uuid id PK
+        uuid origin_location_id FK
+        uuid destination_location_id FK
+        string name
+        string description
+        string status
+        datetime deleted_at
+    }
+
+    MIGRATION_FLOW {
+        uuid id PK
+        uuid route_id FK
+        int year
+        int month
+        int day
+        int amount
+        enum flow_type
+        float confidence_level
+        uuid source_id FK
+    }
+
+    MIGRATION_EVENT {
+        uuid id PK
+        string title
+        string description
+        datetime date
+        uuid location_id FK
+    }
+
+    DATA_SOURCE {
+        uuid id PK
+        string name UK
+        string url
+        string description
+        enum type
+    }
+
+    STATISTICS {
+        uuid id PK
+        string metric
+        float value
+        string period
+        uuid country_id FK
+    }

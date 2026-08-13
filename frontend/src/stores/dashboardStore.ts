@@ -1,0 +1,4 @@
+import { create } from 'zustand'; import type { RouteType } from '../types/api';
+export type Granularity = 'month' | 'year';
+interface DashboardState { destinationId?: string; routeType?: RouteType; year?: number; granularity: Granularity; isPlaying: boolean; selectedMonth?: number; setFilter: (patch: Partial<Pick<DashboardState, 'destinationId' | 'routeType' | 'year' | 'granularity' | 'selectedMonth'>>) => void; togglePlaying: () => void; reset: () => void }
+export const useDashboardStore = create<DashboardState>((set) => ({ year: 2024, granularity: 'month', isPlaying: false, setFilter: (patch) => set(patch), togglePlaying: () => set((state) => ({ isPlaying: !state.isPlaying })), reset: () => set({ destinationId: undefined, routeType: undefined, year: 2024, selectedMonth: undefined, granularity: 'month', isPlaying: false }) }));

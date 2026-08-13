@@ -1,0 +1,36 @@
+# Migration Flow Observatory — Infraestrutura de Banco de Dados
+# Sobe PostgreSQL 16 com a extensão PostGIS pré-instalada (imagem oficial
+# postgis/postgis), com volume persistente e credenciais via .env.
+#
+# Uso:
+#   cp ../../.env.example ../../.env   # (a partir desta pasta) ou use o .env da raiz
+#   docker compose up -d
+#   docker compose logs -f postgres
+#
+# Este arquivo também está espelhado na raiz do projeto (docker-compose.yml)
+# para permitir `docker compose up` diretamente na raiz — ver
+# docs/model.md para a justificativa de manter as duas cópias.
+
+services:
+  postgres:
+    image: postgis/postgis:16-3.4
+    container_name: migration-flow-observatory-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-migration_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?defina POSTGRES_PASSWORD no .env}
+      POSTGRES_DB: ${POSTGRES_DB:-migration_flow_observatory}
+    ports:
+      - '${POSTGRES_PORT:-5432}:5432'
+    volumes:
+      - migration_flow_db_data:/var/lib/postgresql/data
+      - ../migrations:/docker-entrypoint-initdb.d/migrations:ro
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-migration_user}']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  migration_flow_db_data:
+    name: migration_flow_observatory_db_data
