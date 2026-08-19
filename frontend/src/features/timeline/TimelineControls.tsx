@@ -1,2 +1,42 @@
-import { Pause, Play } from 'lucide-react'; import { useEffect } from 'react'; import { useDashboardStore } from '../../stores/dashboardStore';
-export function TimelineControls({ maxMonth = 12 }: { maxMonth?: number }) { const { granularity, selectedMonth, isPlaying, setFilter, togglePlaying } = useDashboardStore(); useEffect(() => { if (!isPlaying || granularity === 'year') return; const id = window.setInterval(() => setFilter({ selectedMonth: ((selectedMonth ?? 0) % maxMonth) + 1 }), 1200); return () => window.clearInterval(id); }, [granularity, isPlaying, maxMonth, selectedMonth, setFilter]); return <div className="timeline-controls"><div className="segment"><button className={granularity === 'month' ? 'active' : ''} onClick={() => setFilter({ granularity: 'month' })}>Mês</button><button className={granularity === 'year' ? 'active' : ''} onClick={() => setFilter({ granularity: 'year' })}>Ano</button></div><input aria-label="Período selecionado" type="range" min="1" max={maxMonth} value={selectedMonth ?? maxMonth} disabled={granularity === 'year'} onChange={(e) => setFilter({ selectedMonth: Number(e.target.value) })}/><button className="play-button" onClick={togglePlaying}>{isPlaying ? <Pause size={15}/> : <Play size={15}/>} {isPlaying ? 'PAUSAR' : 'PLAY'}</button></div> }
+import { Pause, Play } from 'lucide-react';
+import { useEffect } from 'react';
+import { useDashboardStore } from '../../stores/dashboardStore';
+
+export function TimelineControls({ maxMonth = 12 }: { maxMonth?: number }) {
+  const { granularity, selectedMonth, isPlaying, setFilter, togglePlaying } = useDashboardStore();
+
+  useEffect(() => {
+    if (!isPlaying || granularity === 'year') return;
+    const id = window.setInterval(() => {
+      setFilter({ selectedMonth: ((selectedMonth ?? 0) % maxMonth) + 1 });
+    }, 1200);
+    return () => window.clearInterval(id);
+  }, [granularity, isPlaying, maxMonth, selectedMonth, setFilter]);
+
+  return (
+    <div className="timeline-controls">
+      <div className="segment">
+        <button className={granularity === 'month' ? 'active' : ''} onClick={() => setFilter({ granularity: 'month' })}>
+          Mês
+        </button>
+        <button className={granularity === 'year' ? 'active' : ''} onClick={() => setFilter({ granularity: 'year' })}>
+          Ano
+        </button>
+      </div>
+
+      <input
+        aria-label="Período selecionado"
+        type="range"
+        min="1"
+        max={maxMonth}
+        value={selectedMonth ?? maxMonth}
+        disabled={granularity === 'year'}
+        onChange={(e) => setFilter({ selectedMonth: Number(e.target.value) })}
+      />
+
+      <button className="play-button" onClick={togglePlaying}>
+        {isPlaying ? <Pause size={15} /> : <Play size={15} />} {isPlaying ? 'PAUSAR' : 'PLAY'}
+      </button>
+    </div>
+  );
+}
