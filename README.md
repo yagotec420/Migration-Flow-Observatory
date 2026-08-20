@@ -24,6 +24,12 @@ O **Migration Flow Observatory** é um dashboard interativo que visualiza fluxos
 
 O projeto nasceu como estudo de caso técnico, com foco inicial em fluxos migratórios relacionados ao Irã, mas com arquitetura pensada para suportar qualquer país ou região no futuro.
 
+## Screenshots
+
+| Dashboard | Mapa Interativo | Linha do Tempo |
+|---|---|---|
+| ![Dashboard](./images/dashboard.png) | ![Mapa](./images/map.png) | ![Timeline](./images/timeline.png) |
+
 ## Objetivos
 
 - Demonstrar na prática conhecimentos de desenvolvimento full-stack, bancos de dados geoespaciais e visualização de dados.
@@ -84,8 +90,7 @@ migration-flow-observatory/
 ## Instalação
 
 ```bash
-git clone https://github.com/<seu-usuario>/migration-flow-observatory.git
-cd migration-flow-observatory
+git git clone https://github.com/yagotec420/migration-flow-observatory.git
 
 # Variáveis de ambiente
 cp .env.example .env                    # raiz — usado pelo docker-compose
@@ -127,16 +132,6 @@ npm run dev
 
 A API sobe em `http://localhost:3333` (Mock Data por padrão — ver `database/docs/integration-review.md` para como o Provider PostgreSQL, já implementado, pode ser ativado). Health check: `GET http://localhost:3333/health`. Endpoints completos em [`backend/docs/endpoints.md`](./backend/docs/endpoints.md).
 
-## Screenshots
-
-## Screenshots
-
-> Espaços reservados — serão preenchidos conforme as telas forem implementadas.
-
-| Dashboard | Mapa Interativo | Linha do Tempo |
-|---|---|---|
-| ![Dashboard](./images/dashboard.png) | ![Mapa](./images/map.png) | ![Timeline](./images/timeline.png) |
-
 ## Funcionalidades
 
 ### Planejadas
@@ -148,7 +143,9 @@ A API sobe em `http://localhost:3333` (Mock Data por padrão — ver `database/d
 - Autenticação de usuários (para funcionalidades avançadas)
 
 ### Em desenvolvimento
-- _(nenhuma no momento)—
+
+- Integração e utilização de dados reais
+- Refinamento da experiência visual e das interações do dashboard
 
 
 ### Concluídas
@@ -197,6 +194,6 @@ Contribuições são bem-vindas! Para contribuir:
 
 ## Contato
 
->🔗 [LinkedIn](COLE_SEU_LINK_AQUI)  
-💻 [GitHub](COLE_SEU_LINK_AQUI)  
-📧 [E-mail](mailto:SEU_EMAIL_AQUI)
+>🔗 [LinkedIn](https://www.linkedin.com/in/yago-guilherme-7b09562b8/)  
+💻 [GitHub](https://github.com/yagotec420/)  
+📧 [E-mail](mailto:yagoguilherme0420@gmail.com)
