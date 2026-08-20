@@ -26,13 +26,12 @@ O projeto nasceu como estudo de caso técnico, com foco inicial em fluxos migrat
 
 ## Objetivos
 
-- Demonstrar domínio técnico em arquitetura de software, visualização de dados geoespaciais e engenharia full-stack moderna.
+- Demonstrar na prática conhecimentos de desenvolvimento full-stack, bancos de dados geoespaciais e visualização de dados.
 - Servir como portfólio profissional para processos seletivos internacionais.
-- Explorar boas práticas de organização de código em um projeto de escala realista (não um MVP descartável).
 
 ## Motivação
 
-Dados migratórios são, por natureza, complexos, dispersos e difíceis de interpretar em tabelas cruas. Visualização de dados transforma essa complexidade em compreensão: mapas e linhas do tempo permitem identificar padrões, picos e rotas que números isolados não revelam. Este projeto usa esse princípio como estudo de caso técnico, aplicando ferramentas modernas de geoprocessamento e visualização.
+A ideia para o Migration Flow Observatory surgiu enquanto eu acompanhava notícias sobre guerras e crises humanitárias e me deparei com uma pergunta simples: para onde vão os civis que precisam deixar suas casas para escapar de um conflito? Quais países recebem essas pessoas? Quais são os principais destinos? Esses fluxos mudam ao longo do tempo? E, depois de deixar seu país de origem, essas pessoas permanecem no destino ou eventualmente retornam? As notícias costumam mostrar números, histórias e acontecimentos isolados, mas nem sempre é fácil enxergar o movimento dessas populações em uma escala mais ampla. Foi a partir dessas perguntas que surgiu a ideia de criar o Migration Flow Observatory: uma aplicação capaz de transformar dados sobre migração em uma representação visual dos fluxos entre diferentes locais, facilitando a compreensão de origem, destino, rotas e intensidade dos movimentos migratórios. O objetivo não é apenas mostrar números, mas tornar esses movimentos mais fáceis de visualizar e explorar.
 
 ## Tecnologias
 
@@ -66,7 +65,7 @@ Dados migratórios são, por natureza, complexos, dispersos e difíceis de inter
 
 ## Arquitetura
 
-O projeto é dividido em três módulos independentes — `frontend/`, `backend/` e `database/` — que se comunicam exclusivamente por contratos de API bem definidos. Detalhes completos em [`docs/architecture.md`](./docs/architecture.md).
+O projeto é dividido em três módulos principais — `frontend/`, `backend/` e `database/` — com responsabilidades separadas para facilitar a organização e evolução da aplicação.
 
 ## Estrutura das pastas
 
@@ -130,6 +129,8 @@ A API sobe em `http://localhost:3333` (Mock Data por padrão — ver `database/d
 
 ## Screenshots
 
+## Screenshots
+
 > Espaços reservados — serão preenchidos conforme as telas forem implementadas.
 
 | Dashboard | Mapa Interativo | Linha do Tempo |
@@ -147,7 +148,8 @@ A API sobe em `http://localhost:3333` (Mock Data por padrão — ver `database/d
 - Autenticação de usuários (para funcionalidades avançadas)
 
 ### Em desenvolvimento
-- _(nenhuma no momento — próxima etapa é o Frontend, ver `docs/roadmap.md`)_
+- _(nenhuma no momento)—
+
 
 ### Concluídas
 - ✅ Definição da arquitetura global
@@ -195,4 +197,6 @@ Contribuições são bem-vindas! Para contribuir:
 
 ## Contato
 
-> _Espaço reservado — adicionar nome, e-mail e/ou LinkedIn._
+>🔗 [LinkedIn](COLE_SEU_LINK_AQUI)  
+💻 [GitHub](COLE_SEU_LINK_AQUI)  
+📧 [E-mail](mailto:SEU_EMAIL_AQUI)
