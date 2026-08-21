@@ -12,11 +12,13 @@
 Este projeto tem **finalidade educacional e de demonstração técnica**. Ele **não é uma fonte oficial** de estatísticas migratórias. Os dados exibidos podem representar:
 
 - estimativas baseadas em bases públicas disponíveis, quando existentes;
-- dados simulados (*mock data*), quando não há API pública em tempo real acessível para determinado indicador.
+- dados simulados (_mock data_), quando não há API pública em tempo real acessível para determinado indicador.
 
 Nenhuma informação apresentada deve ser utilizada como referência oficial, jornalística ou acadêmica sem verificação independente da fonte primária.
 
----
+🚧 Status do projeto
+
+## Em desenvolvimento — etapa final: a aplicação está funcional e atualmente está em processo de implementação e integração de dados públicos reais. Os dados utilizados na versão atual são provisórios e serão substituídos por dados provenientes de fontes públicas confiáveis.
 
 ## Descrição
 
@@ -26,8 +28,8 @@ O projeto nasceu como estudo de caso técnico, com foco inicial em fluxos migrat
 
 ## Screenshots
 
-| Dashboard | Mapa Interativo | Linha do Tempo |
-|---|---|---|
+| Dashboard                            | Mapa Interativo           | Linha do Tempo                     |
+| ------------------------------------ | ------------------------- | ---------------------------------- |
 | ![Dashboard](./images/dashboard.png) | ![Mapa](./images/map.png) | ![Timeline](./images/timeline.png) |
 
 ## Objetivos
@@ -42,6 +44,7 @@ A ideia para o Migration Flow Observatory surgiu enquanto eu acompanhava notíci
 ## Tecnologias
 
 ### Frontend
+
 - React
 - TypeScript
 - Vite
@@ -53,16 +56,19 @@ A ideia para o Migration Flow Observatory surgiu enquanto eu acompanhava notíci
 - Zustand
 
 ### Backend
+
 - Node.js
 - Express
 - TypeScript
 
 ### Banco de Dados
+
 - PostgreSQL
 - PostGIS
 - Prisma ORM
 
 ### Ferramentas
+
 - ESLint
 - Prettier
 - Husky + lint-staged
@@ -135,6 +141,7 @@ A API sobe em `http://localhost:3333` (Mock Data por padrão — ver `database/d
 ## Funcionalidades
 
 ### Planejadas
+
 - Mapa interativo com rotas migratórias animadas
 - Dashboard com estatísticas e indicadores (entradas, saídas, saldo migratório)
 - Linha do tempo com evolução histórica dos fluxos
@@ -147,8 +154,8 @@ A API sobe em `http://localhost:3333` (Mock Data por padrão — ver `database/d
 - Integração e utilização de dados reais
 - Refinamento da experiência visual e das interações do dashboard
 
-
 ### Concluídas
+
 - ✅ Definição da arquitetura global
 - ✅ Estrutura de pastas do repositório
 - ✅ Documentação técnica inicial
@@ -194,6 +201,6 @@ Contribuições são bem-vindas! Para contribuir:
 
 ## Contato
 
->🔗 [LinkedIn](https://www.linkedin.com/in/yago-guilherme-7b09562b8/)  
-💻 [GitHub](https://github.com/yagotec420/)  
-📧 [E-mail](mailto:yagoguilherme0420@gmail.com)
+> 🔗 [LinkedIn](https://www.linkedin.com/in/yago-guilherme-7b09562b8/)  
+> 💻 [GitHub](https://github.com/yagotec420/)  
+> 📧 [E-mail](mailto:yagoguilherme0420@gmail.com)
